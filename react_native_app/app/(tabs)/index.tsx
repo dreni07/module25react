@@ -9,7 +9,9 @@ const Home = () => {
   const [username,setUsername] = useState('');
   const [password,setPassword] = useState('');
 
-  const handle = async () => {
+  
+
+  const handle = async ({navigation}) => {
     //
 
     try{
@@ -26,8 +28,9 @@ const Home = () => {
 
       console.log(answer);
 
-      if(answer?.token){
-        
+      if(answer?.accessToken){
+          console.log("Next Page!");
+          navigation.navigate("Main");
       }
     } catch(err){
       console.error(err);
